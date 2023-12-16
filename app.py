@@ -17,7 +17,7 @@ gb_model=joblib.load("tvs_gradient_boosting_model.pkl")
 def ekran_index(Ekran_Boyutu):
     index= int(ekran_boyutlari[ekran_boyutlari["Ekran_Boyutu"]==Ekran_Boyutu].index.values)
     return index
-def garantiTİp_index(Garanti_Tipi):
+def garantiTip_index(Garanti_Tipi):
     index= int(garanti_tipleri[garanti_tipleri["Garanti_Tipi"]==Garanti_Tipi].index.values)
     return index
 def teknolojiler_index(Goruntuleme_Teknolojisi):
@@ -84,7 +84,7 @@ def create_prediction_value(Dahili_uydu_alici,Ekran_Boyutu,Garanti_Tipi,Goruntu_
 if st.sidebar.button("Fiyatı Tahmin Et"):
 # Regresyon modelinizi kullanarak tahmin yapın
     # Tahmin yapın
-    predict_value=create_prediction_value(Dahili_uydu_alici(dahili_uydu_alici),ekran_index(ekran_boyutu),garantiTİp_index(garanti_tipi),
+    predict_value=create_prediction_value(Dahili_uydu_alici(dahili_uydu_alici),ekran_index(ekran_boyutu),garantiTip_index(garanti_tipi),
                goruntuKalite_index(goruntu_kalitesi), teknolojiler_index(goruntuleme_teknolojisi),Smart_TV(Smart_TV),
                                       cozunurluk_index(cozunurluk))
     def predict_models(res):
